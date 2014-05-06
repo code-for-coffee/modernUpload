@@ -1,0 +1,20 @@
+<div class="jumbotron">
+    <p><input class="btn btn-default" type="file" multiple="multiple" id="test" /></p>
+    <p><button class="btn btn-info" value="Upload!" id="Upload"><span class="glyphicon glyphicon-cloud-upload"> </span> Upload</button> <div class="progress">
+    <div id="progress" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+        No upload initiated
+    </div>
+</div></p>
+    
+</div>
+
+<div class="row">
+</div>
+<script src="~/js/modernUpload/modernUploader.js"></script>
+<script>
+    var h = new modernUploader.uploader("#test", "#progress", "../../home/Upload", "upload", "../js/modernUpload/modernUploaderWorker.js");
+    var x = document.getElementById("Upload");
+    x.onclick = function(event) {
+        h.startUpload();
+    }
+</script>
